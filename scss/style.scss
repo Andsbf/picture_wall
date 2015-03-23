@@ -19,14 +19,18 @@ body {
     img {
       width: 200px;
       height: 200px;
+      &:hover{
+          filter: hue-rotate(180deg);
+          -webkit-filter: hue-rotate(180deg);
+          -moz-filter: hue-rotate(180deg);
+          -o-filter: hue-rotate(180deg);
+          -ms-filter: hue-rotate(180deg);
+      };
+
     } 
 
     div.name {
       text-align: center;  
     }
-
-
-
   }
-
 }
