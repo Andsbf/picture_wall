@@ -1,36 +1,115 @@
-$primaryColor: #FF0000;
+$primaryColor: #8CD1FC;
 
 body {
   font-family: Verdana;
   font-size: 1.5em;
+  text-align:center;
+  position: relative;
   h1 {
-    color: $primaryColor; 
+    background-color:  $primaryColor; 
+    text-align: center;
+    color: white;
+    margin: 0px;
   }
-}
 
-#team-members {
-  clear: both;
+  h2{
+    text-align: center;
+    background-color: lightgray;
+    border: 0px;
+    color: white;
+    border-top: 0px;
+    margin-top: 0px; 
+  }
 
-  .member {
-    float: left;
-    /*border: 1px solid gray;*/
-    margin: 10px;
-    padding: 6px;
-    img {
-      width: 200px;
-      height: 200px;
-      &:hover{
+  #team-members {
+    clear: both;
+    
+    .member {
+      /*float: left;*/
+      /*border: 1px solid gray;*/
+      margin: 10px auto;
+      display: inline-block;
+      padding: 6px;
+      &:nth-child(even){
+        &:hover {
           filter: hue-rotate(180deg);
           -webkit-filter: hue-rotate(180deg);
           -moz-filter: hue-rotate(180deg);
           -o-filter: hue-rotate(180deg);
           -ms-filter: hue-rotate(180deg);
+          -webkit-transform: scale3d(1.05, 1.05, 1.05);
+          transform: scale3d(1.05, 1.05, 1.05);
+          animation: buzz 1s infinite;
+          -webkit-animation: buzz 1s infinite;
+        };
       };
-
-    } 
-
-    div.name {
-      text-align: center;  
+      &:nth-child(odd){
+        &:hover {
+          filter: hue-rotate(90deg);
+          -webkit-filter: hue-rotate(90deg);
+          -moz-filter: hue-rotate(90deg);
+          -o-filter: hue-rotate(90deg);
+          -ms-filter: hue-rotate(90deg);
+          -webkit-transform: scale3d(1.05, 1.05, 1.05);
+          transform: scale3d(1.05, 1.05, 1.05);
+          animation: pulse 1s infinite;
+          -webkit-animation: pulse 1s infinite;
+        }
+      };
+      img {
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        border-width: 10px;
+        border-style: solid;
+        border-color: $primaryColor;
+        box-shadow: 0px 0px 15px 5px #888888;
+      } 
+  
+      div.name {
+        text-align: center;  
+      }
     }
   }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@-webkit-keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@-webkit-keyframes buzz {
+  0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+  10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+  30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+  40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+  50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+  70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+  80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+  90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+  100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+@-webkit-keyframes buzz {
+  0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+  10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+  30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+  40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+  50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+  70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+  80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+  90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+  100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
 }
